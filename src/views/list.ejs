@@ -12,8 +12,9 @@
     <% users.forEach((user) => { %>
     <li>
       <%= user.name %> - <%= user.email %> - Idade: <%= user.age %> -
-      <a href="/edit?id=<%= user._id %>">[editar]</a> -
-      <a href="/remove/<%= user._id %>">[remover]</a>
+      <a href="/register/edit?id=<%= user._id %>">[editar]</a> -
+      <a href="/register/remove/<%= user._id %>"
+        onclick="if(confirm('Deseja realmente remover o cliente?')) { return true; } else { return false; }">[remover]</a>
     </li>
     <% }) %>
   </ul>
